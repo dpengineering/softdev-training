@@ -10,10 +10,10 @@ Before we delve into the specifics of learning programming languages and algorit
 
 
 ## The History of Linux
-As you might know, Linux is an operating system, or the glue behind all of the chips and circuitry inside of your computer. Currently, the DPEA workstations (what you're likely reading this on) are running off of Ubuntu, which is a user friendly flavor of Linux. There are many different types of Linux flavors, from Kali Linux to Debian to Fedora, all of which are unified under the fundamental Linux kernel. It was rooted in the UNIX operating system, developed by Ken THompson and Dennis Ritchie of Bell Laboratories in 1969, and continued by Linus Torwald in the modern era.
+As you might know, Linux is an operating system, or the glue behind all of the chips and circuitry inside of your computer. Currently, the DPEA workstations (what you're likely reading this on) are running off of Ubuntu, which is a user friendly flavor of Linux. There are many different types of Linux flavors, from Kali Linux to Debian to Fedora, all of which are unified under the fundamental Linux kernel. It was rooted in the UNIX operating system, developed by Ken Thompson and Dennis Ritchie of Bell Laboratories in 1969, and continued by Linus Torwald in the modern era.
 
 ## What does Linux do?
-The beauty of the Linux terminal is that it connects underlying hardware with software, running your device, peripherals, and more. It's reliant on _abstraction_: it clumps things up into fundamental building blocks -- command line utilities -- and builds upon those command line utilities to run code and manage resources. By directly accessing these command line utilities, we can do some really powerful stuff with the amount of control we have over the system. To do so, we need to explore the command line.
+The beauty of the Linux terminal is that it connects underlying hardware with software, running your device, peripherals, and more. It's reliant on _abstraction_: it clumps things up into fundamental building blocks -- command line utilities -- and builds upon those command line utilities to run code and manage resources. By directly accessing these command line utilities, we can do some really powerful stuff with the amount of control we have over the system. To do so, we need to explore the **command line**.
 
 
 # The command line
@@ -109,13 +109,13 @@ Play around with this! Try and navigate through to different folders! Some examp
 - Can you navigate through multiple directories in one sitting using cd? How? 
 
 One thing you may have noticed: it's really difficult to go backwards a directory using cd! That's why there's a handy shortcut: `cd ..`, which changes directories into the parent folder. Note that `..` just referes to your parent folder. For instance, if I was in `/home/alokthakrar`, `cd ..` would take me to `/home.` This can be chained: `cd ../..` from `home/alokthakrar/` would take you to `/` (your root directory), and `cd ../../opt` from that same working directory would take you to `/opt`. 
-
+You make a chaneg
 Two other shortcuts to mention are `cd ~`, which defaults to your home directory (same as `cd` with no arguments) and `cd -`, which takes yuo to the directory that you were just in.
 
  
-These commands are the fundamental building blocks of terminal operations. I'd reccmoend playing around with them a little bit, as having an intuition for them is really helpful! Below are other useful Linux commands, though you may end up googling many of them if you'd like to play with them.
+These commands are the fundamental building blocks of terminal operations. I'd reccomend playing around with them a little bit, as having an intuition for them is really helpful! Below are other useful Linux commands, that, while useful, are likely going to be less essential than something like pwd, cd, and ls. I've listed some of the most pertinent ones in a rough order of importance. I'd advise having familiarity with them, as they are very helpful [and help with building intutition of using the terminal!] but there's no need to become a mkdir master, as you'll very rarely need to use it.
 
-There's an autocomplete feature on the terminals: if you type in a portion of the filepath, and there's no other possible filepath that the given text could eventually be, you can autocomplete the rest of the folder name that you're going to enter. For instance, tabbing after `cd Do` would give you a list of all folders you can navigate into that start with "Do" -- in my case, both the Downloads and Documents folder, but `cd Dow` only corresponds to one folder on my system, Downloads, and would autocomplete to the full directory name. I'd play around with this feature as well.
+There's an autocomplete feature on the terminals: if you type in a portion of the filepath, and there's no other possible filepath that the given text could eventually be, you can autocomplete the rest of the folder name that you're going to enter. For instance, tabbing after `cd Do` would give you a list of all folders you can navigate into that start with "Do" -- in my case, both the Downloads and Documents folder, but `cd Dow` only corresponds to one folder on my system, Downloads, and would autocomplete to the full directory name. I'd play around with this feature as well. Autocorrect exists for all commands and paths. 
 {: .tip }
 
 ## touch 
@@ -124,14 +124,20 @@ Make a new file. `touch kermit.py` creates a new file named kermit.py. `touch Do
 ## cat
 Print out the contents of a file. `cat kermit.py` prints the contents of kermit.py. Can specify multiple files: e.g. `cat kermit.py second.py` to concatenate them together. 
 
+## cp
+copies a file from argument1 to argument2, where arguments are the inputs passed into the command. `cp kermit.png /bin` creates a copy of  `kermit.png` in alokthakrar, assuming kermit.png is in our working directory/scope. 
+
+## rm 
+Remove files. `rm kermit1.png` deletes kermit1.png, assuming it's in the working directory. `rm -r directoryName` allows you to delete directories, as well as the `rmdir` command, e.g. `rmdir directory`. 
+
+With great power comes great responsibility! rm is dangerous. If you delete the wrong folder, you can't bring it back, and could potentially brick your entire computer. 
+{: .warning }
+
 ## man
 Learn more about what a command does and its flags: e.g. `man ls`
 
-## clear
-`clear` clears the terminal. 
-
-## cp
-copies a file from argument1 to argument2, where arguments are the inputs passed into the command. `cp kermit.png /bin` creates a copy of  `kermit.png` in alokthakrar, assuming kermit.png is in our working directory/scope. 
+## Ctrl-C
+Not technically a command, but to kill any running process (in this context, any command), just hit Ctrl-C. This is helpful if you have a piece of code that doesn't terminate, but you want to stop.
 
 ## mv
 Same functionality as cp, just moves the files instead of copying them. `mv kermit.png /home/alokthakrar` moves kermit.png to alokthakrar. 
@@ -139,11 +145,14 @@ Same functionality as cp, just moves the files instead of copying them. `mv kerm
 ## mkdir
 The `touch` for directories. `mkdir PZ` creates a directory named PZ.
 
-## rm 
-Remove files. `rm kermit1.png` deletes kermit1.png, assuming it's in the working directory. `rm -r directoryName` allows you to delete directories, as well as the `rmdir` command, e.g. `rmdir directory`. 
+## clear
+`clear` clears the terminal. 
 
-With great power comes great responsibility! rm is dangerous. If you delete the wrong folder, you can't bring it back, and could potentially brick your entire computer. 
-{: .warning }
+## vim
+The text editor for all of the cool kids. It allows you to edit files within the terminal, which is super useful for when you don't have a GUI handy Vim is very helpful, but also is hard to use, so I'd only reccomend trying to learn it if you enjoyed the process of working in the terminal. I'd reccomend going through a guide like https://opensource.com/article/19/3/getting-started-vim, and avoiding emacs at all costs
+
+Congrats on finishing the first page of the DPEA softdev training! Hopefully it was somewhat of an enjoyable experience, and you gained familiarity with using the terminal. Though this may seem tedious, the terminal is exceptionally useful in almost all STEM fields, as many are incoorparating computing within them, so it definitely is a good thing to learn about regardless of your future profession. It also makes troubleshooting things at the DPEA a lot easier :)
+
 
 
 
