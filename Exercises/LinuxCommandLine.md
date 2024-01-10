@@ -153,6 +153,8 @@ The text editor for all of the cool kids. It allows you to edit files within the
 
 Congrats on finishing the first page of the DPEA softdev training! Hopefully it was somewhat of an enjoyable experience, and you gained familiarity with using the terminal. Though this may seem tedious, the terminal is exceptionally useful in almost all STEM fields, as many are incoorparating computing within them, so it definitely is a good thing to learn about regardless of your future profession. It also makes troubleshooting things at the DPEA a lot easier :)
 
+## sudo
+Allows you to run commands as a superuser, or as someone with all available permissions. For instance, `sudo ls` will run ls as a superuser. Can save you if things break, though installs with sudo can also break things further. It'll prompt you for a user password where no text will appear when you type -- don't be alarmed! If you type in your password and hit enter it'll work as intended.  
 
 
 
