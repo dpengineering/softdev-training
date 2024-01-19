@@ -139,11 +139,34 @@ We finally have the bones to be able to create our button! First, let's define o
     FloatLayout:
         size_hint: None, None
     DPEAButton:
-    ```
+```
 We now need to give the DPEAButton attributes that identify it. All of the [general button attributes] should work, but the ones we'll cover are the most useful.
 
+The first trait we'll add is an _id_. This allows us to identify our button and operate upon it in our button class. 
 
+We'll also define a text parameter, which is pretty self explanatory. 
 
+The size parameter defines the size of our button, in pixels. Note that we can do this only because of the None, None on our Float Layout, otherwise we would have had to define our size using the size_hint attribute as a percentage of the total canvas. 
+
+We also have two position attributes: x and y. These are once again in pixels, using the width and length of the screen in order to get it into that format. Note that we'd have to use pos_hint if not for the None, None. 
+
+We can reference the mainScreen as root because of that `<mainScreen>` at the header of this block of code. Root is always going to be the screen that your brackets cover, which we'll see come into play later on as we add more screens. 
+{: .note }
+
+Finally, we have our color. This is in RGB format from 0-1, with the last value defining transparency, or an alpha channel. 0, 1, 0, 1 means to display just bright green with zero transparency. 
+```py
+<mainScreen>:
+    name: 'main'
+    FloatLayout:
+        size_hint: None, None
+    DPEAButton:
+        id: test_button
+        text: 'kermit'
+        size: 100, 100
+        x: root.width * 0.75
+        y: root.height * 0.5
+        color: 0, 1, 0, 1
+```
 
 
 
