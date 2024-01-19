@@ -24,7 +24,7 @@ It's time to try and take a crack at it! Try and use this example UI to complete
 
 2. Create another button that displays the number of times you've pressed it. 
 
-3. Create a slider labeled "position" that, when activated, changes the text on a seperate label or position from  to 100. 
+3. Create a slider labeled "position" that, when activated, changes the text on a separate label or position from  to 100. 
 
 4. Create a button that is an image. Have this button transition to a new screen when pressed.
 

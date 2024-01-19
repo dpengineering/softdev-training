@@ -168,25 +168,108 @@ Finally, we have our color. This is in RGB format from 0-1, with the last value 
         color: 0, 1, 0, 1
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
 ## Connecting the two together
 
-It's now time to connect our future .kv interface to our python file. We'll be using the builder class that we imported earlier to do so:
+You're almost done! There are just a few finishing touches we have to add in order to get everything up and running.
+
+First off, the operations of managing the UI are going to be taken over by the Screen Manager. Let's indicate that in our main class:
+
+Instead of: 
+```py
+class main(App):
+
+    def build(self):
+        return Label(text = "put your name in here!")
+```
+
+Put in this: 
+
+```py 
+class main(App):
+    def build(self):
+        return SCREEN_MANAGER
+```
 
 ```py
 Builder.load_file('main.kv')
 ```
+
+As mentioned earlier, we now need to tell the Screen Manager what part of the .kv file defines the main screen widgets, which becomes a bigger issue with multiple screens. After using the builder to get it into a machine readable form by specifying the name of the overarching Widget, we can then add this Widget to the Screen Manager. 
+
+```py
+Builder.load_file('main.kv')
+SCREEN_MANAGER.add_widget(mainScreen(name=MAIN_SCREEN_NAME))
+```
+
+We also would like our screen window to be white for the asthetics, which we can specify using the following command: 
+```py
+Window.clearcolor(1, 1, 1, 1)
+```
+Now, hit run and watch the magic happen! You should have a UI with a button with "kermit" written on it pop up on your screen in all its glory. 
+
+just as a recap, this is what your main.py file should look like: 
+```py 
+import kivy
+from kivy.app import App
+from kivy.uix.label import Label
+from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.lang import Builder
+from kivy.core.window import Window
+from pidev.kivy import DPEAButton
+
+
+SCREEN_MANAGER = ScreenManager()
+MAIN_SCREEN_NAME = 'main'
+class main(App):
+    def build(self):
+        return SCREEN_MANAGER
+
+
+class mainScreen(Screen):
+    def kermit(self):
+        print("i love kermit the frog")
+
+
+Builder.load_file('main.kv')
+SCREEN_MANAGER.add_widget(mainScreen(name=MAIN_SCREEN_NAME))
+Window.clearcolor = (1, 1, 1, 1)  #white. doesn't actually matter where this command is.
+
+if __name__ == "__main__":
+    main().run()
+```
+And your .kv file: 
+```py
+<mainScreen>:
+    name: 'main'
+    FloatLayout:
+        size_hint: None, None
+    DPEAButton:
+        id: test_button
+        text: 'kermit'
+        size: 100, 100
+        x: root.width * 0.75
+        y: root.height * 0.5
+        color: 0, 1, 0, 1
+```
+
+
+# Using the buttons 
+
+Cool! We have a nice button of any color, any size, and in any position. But how can we actually _use_ this button?
+
+The on_press attribute is super useful for this. You can pass in a function present in the Screen class that encompasses the .kv file, and have that function execute... on press!
+
+Luckily, we have just the function for our button in the _kermit()_ function. Address this in the same indentation layer as the other attributes in the following way:
+
+```py
+on_press: root.kermit()
+```
+Similar to the root attribute definition described for the x and y attributes, root just refers to the overarching screen class that the element is contained in. This includes variables defined within the screen, such as width and height, as well as any additional functions.
+
+Now see as our glorious king Kermit is showered with the praise he always has deserved by re-running your main class and pressing our button. 
+
+## ID Based Interaction with Widgets
+
 
 
 
