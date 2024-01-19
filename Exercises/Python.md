@@ -12,9 +12,9 @@ The first suggestion is to watch and follow along [the following 4.5 hour video]
 Note -- the first thing he'll tell you to do is to install Pycharm/python3. These are already installed on your computer, so don't worry about that. 
 
 
-The second suggestion is to follow the on line tutorial at https://www.learnpython.org -- Complete all 12 sections, through Modules and Packages.
+The second suggestion is to follow the online tutorial, linked here: complete the first 12 sections, through modules and packages. 
 
-After you feel like you have some Python under your belt, now it's time to test your skills with the following online python coding games. Create a free account using your dpengineering.org email address so you can return and track your progress.
+After you feel like you have some Python under your belt, it's now time to test your skills with the following online python coding games! Create a free account using your dpengineering.org email address so you can return and track your progress.
 
 Finxter: https://app.finxter.com/learn/computer/science/
 
@@ -24,3 +24,4 @@ Go through as much as you need to feel comfortable with the language.
 
 
 [the following 4.5 hour video]: https://www.youtube.com/watch?v=rfscVS0vtbw
+[linked here]: https://www.learnpython.org
