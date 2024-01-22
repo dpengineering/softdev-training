@@ -188,9 +188,7 @@ Put in this:
 class main(App):
     def build(self):
         return SCREEN_MANAGER
-```
-
-```py
+        
 Builder.load_file('main.kv')
 ```
 
@@ -266,11 +264,36 @@ on_press: root.kermit()
 ```
 Similar to the root attribute definition described for the x and y attributes, root just refers to the overarching screen class that the element is contained in. This includes variables defined within the screen, such as width and height, as well as any additional functions.
 
-Now see as our glorious king Kermit is showered with the praise he always has deserved by re-running your main class and pressing our button. 
+Now see as our glorious king Kermit is showered with the praise he has always deserved by re-running your main class and pressing our button. 
 
 ## ID Based Interaction with Widgets
 
+This is cool and all, but is there a more fluid way to be able to interact with UI elements? You can either continue to use root, or use IDs.
 
+The first method is one you're likely already exposed to. Try initializing a variable within your mainScreen class called "goat" that defines the string "king kermit." Then, reference this in your button files through the root variable -- `root.goat` -- and see as that text is echoed on your button. If you modify this text, the button will reflect the changes, which can be a super powerful and elegant tool.
+
+The more quick and dirty solution is to use IDs. For instance, let's now define a function toggle that toggles the text on a button after being pressed. 
+
+```py
+    def toggle(self):
+        if(self.ids.test_button.text == "king kermit"):
+            self.ids.test_button.text = "slay!"
+        else:
+            self.ids.test_button.text = "king kermit"
+```
+
+Make this your on_press function and see what happens.
+
+
+For reference, here's a GIF:
+
+GIF!
+
+Just a recap of how this works: we can reference button attributes based on their ids through ids.<id>.<attribute>. The id of our DPEA button was specified to be test_button, which is why we can reference it as such, and we can modify any attribute of this test_button: text was just an example, but color, position, and more are modifiable through teh same method. We can also get the value of these attributes through the same notation, as indicated by the conditional check.
+
+You should now have the skills to proceed into the world of DPEA Kivy and start making your own projects. Congratulations! I know this was a long, difficult slog, but I hope that this was an informative experience and you feel a little bit more comfortable with the general structure of Kivy. 
+
+There are also some more tips and tricks that this guide doesn't cover: while I hope to have distributed these into the other sheets, feel free to ask your peers and the instructor for help if something doesn't make sense. Of course, try and solve the issue yourself, but there are definitely times throughout this whole process where you reach an unscalable wall without the assistance of a fellow climber. 
 
 
 

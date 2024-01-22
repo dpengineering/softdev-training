@@ -25,8 +25,15 @@ It's time to try and take a crack at it! Try and use this example UI to complete
 2. Create another button that displays the number of times you've pressed it. 
 
 3. Create a slider labeled "position" that, when activated, changes the text on a separate label or position from  to 100. 
-
+    - For reference, here is the [Slider documentation].
+    - Remember the size_hint attribute we discussed earlier? That'll come in handy for this. It's not mentioned in the slider documentation, as it's an attribute inherited from the general widget class, but sliders do strange things with default clickable bounding boxes, and size_hint is often the only way to solve them. Godspeed.
 4. Create a button that is an image. Have this button transition to a new screen when pressed.
+    - Use the DPEA Image Button and the Screen Manager. Some information about the Screen Manager: [https://kivy.org/doc/stable/api-kivy.uix.screenmanager.html] and the reference for the DPEA Image Button: [https://github.com/dpengineering/RaspberryPiCommon/blob/master/pidev/kivy/ImageButton.py] 
+
+
+Here is a GIF depicting what your final UI should look like: 
+![yay](/assets/Animation/test.gif)
+
 
 
 
@@ -35,3 +42,9 @@ It's time to try and take a crack at it! Try and use this example UI to complete
 [this page]: https://github.com/dpengineering/RaspberryPiCommon/tree/master/PiKivyProjects
 
 [this example project]: https://github.com/dpengineering/RaspberryPiCommon/tree/master/PiKivyProjects/NewProject
+
+[Slider documentation]: https://kivy.org/doc/stable/api-kivy.uix.slider.html
+
+[https://kivy.org/doc/stable/api-kivy.uix.screenmanager.html]: https://kivy.org/doc/stable/api-kivy.uix.screenmanager.html
+
+[https://github.com/dpengineering/RaspberryPiCommon/blob/master/pidev/kivy/ImageButton.py]: https://github.com/dpengineering/RaspberryPiCommon/blob/master/pidev/kivy/ImageButton.py 
