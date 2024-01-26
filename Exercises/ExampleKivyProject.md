@@ -30,14 +30,71 @@ It's time to try and take a crack at it! Try and use this example UI to complete
 4. Create a button that is an image. Have this button transition to a new screen when pressed.
     - Use the DPEA Image Button and the Screen Manager. Some information about the Screen Manager: [https://kivy.org/doc/stable/api-kivy.uix.screenmanager.html] and the reference for the DPEA Image Button: [https://github.com/dpengineering/RaspberryPiCommon/blob/master/pidev/kivy/ImageButton.py] 
 
+Take a break! Smell the roses! You got this. 
 
-Here is a GIF depicting what your final UI should look like: 
-![yay](/assets/Animation/test.gif)
+5. Add another image button that'll transition to the past screen. 
+
+Here is a GIF depicting what your UI should look like thus far: 
+![test gif](/assets/Animation/test.gif)
+
+6. Make an _animated_ image button that opens up a new Screen.
+
+There's one more thing you need to do! But first, some background. 
+
+On that note...
+
+# The Kivy Clock
+
+The Kivy clock is super useful, but at times can be very fickle. [Here's] the formal documentation for it. 
 
 
+I think there's also another important topic to discuss here -- threading! This is a little bit more advanced of a topic, so totally optional if you'd like to play around with it. 
 
 
+## Clocks 
+What a clock allows you do to is periodically schedule commands, or even schedule commands once. Calling Clock.schedule_interval(self.kermit, 0.5) in an __init__ function will schedule the kermit function to be called once every 0.5 seconds.
 
+Running code is useful! And surprisingly, there's very few ways to do so without user input in Kivy without clocks, which makes them very helpful for regular programmatic operations. 
+
+A unique gimmick in this is to call a function to update every frame, or as fast as Kivy possibly can. You can do this through specifying a time of 0: e.g., ```Clock.schedule_interval(self.kermit, 0)`` would call Kermit ASAP. Note that our function does NOT CALL self.kermit(): it passes it in as a parameter, which means we do not need brackets. 
+
+Clock.schedule_once() is also helpful, as it runs the command passed in once. You can modify when you want this command to execute as well. 
+
+## Blocking commands
+## "Parallel" Computing
+There's a lot of verbage here, but I just wanted to make one thing super explicit. All references to threads in this page, and in these documents as a whole, will refer to threads **in the context of Python.** 
+
+A basic idea of programming languages is the idea of sequential execution. If you call a function x(), then try and call a function y(), y() will only run after x() is completed. The interpreter doesn't just drop whatever its doing in order to execute y(), it completes its task in the order they were passed in, just like a priority queue. 
+
+However, this comes to a head when we run blocking operations. Plenty of things are blocking: running a motor can be blocking, sleeps are definitionally blocking, and a long while or for loop can be temporarily blocking. x() is run, and you try and run y(), but given x() practically never finishes, y() will take a long, long time to actually execute. In the case of Kivy, everything is run as one of these functions. This includes updating frames, which is where our problems arise.
+
+Try it for yourself! Create a new DPEA button which runs a function "waiting" when pressed. Import the time library, and have this button sleep for ten seconds using time.sleep, then print out some text. In those ten seconds, you'll see that your other button, the king kermit one, cannot update: the sleep in the waiting function is stalling out the other function that's supposed to update the GUI.
+
+## Threading -- optional!
+
+There are times, however, in which it's much, much easier to run a blocking operation -- for instance, when running a motor. There, it's helpful to thread things. 
+
+I'm not going to go over concrete code examples because this, once again, is only for exposure into the topic. But what threading allows you do to is simulate multiple flows of execution at one time in order to get around blocking operations. The concurrency class also allows you to do so, just from a higher level perspective, and the multithreading class also achieves a similar purpose. How cool!
+
+Let's go over an example. Say you want to run your motors or even sleep while updating the GUI. We run into an issue, which is likely what you saw with the waiting function from above: a blocking process stalls out the rest of the functions in your sequential queue. 
+
+![img](/assets/Images/queue1.png)
+
+What threading allows you do to is, from an abstracted perspective, create an entirely new queue: this is run tangentially, but shares data with the other queue. 
+
+![img](/assets/Images/queue2.png)
+
+This way, you can run your motor function in a separate queue from your updateGUI() and other operating functions, which won't stall them out. How awesome!
+
+If you're looking for more detailed specifications into threading, including code examples, check out [the documentation]!
+
+
+## The final challenge
+Alright, your last task is more so related to the clock, but I thought threading was a nice interlude here :)
+
+7. Show a component label that shows the (x, y) coordinates of a joystick and moves around with it.
+
+Hint -- updating your label needs to be done as quickly as possible: how do we do that?
 
 [this page]: https://github.com/dpengineering/RaspberryPiCommon/tree/master/PiKivyProjects
 
@@ -48,3 +105,5 @@ Here is a GIF depicting what your final UI should look like:
 [https://kivy.org/doc/stable/api-kivy.uix.screenmanager.html]: https://kivy.org/doc/stable/api-kivy.uix.screenmanager.html
 
 [https://github.com/dpengineering/RaspberryPiCommon/blob/master/pidev/kivy/ImageButton.py]: https://github.com/dpengineering/RaspberryPiCommon/blob/master/pidev/kivy/ImageButton.py 
+
+[the documentation]: https://docs.python.org/3/library/threading.html
