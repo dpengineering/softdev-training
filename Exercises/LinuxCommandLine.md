@@ -2,11 +2,12 @@
 title: Linux, Command Line
 layout: default
 ---
-
+## Preface
+Hello! This guide is meant to serve seniors in the DPEA in the software division. As you go through them, keep in mind that they were all made by fellow DPEA students, so there will most certainly be errors. If you catch one, submit a pull request to the softdev-training repository on Github (one of these pages will teach you how to do so!) to improve documentation for all.
 
 # Linux and the Operating System
 
-Before we delve into the specifics of learning programming languages and algorithms, it helps to know how the computers you work with everyday work, why they operate a certain way, and how you can manipulate those operations to do what you want. After a brief overview of Linux as a whole, we'll get into an introduction into the command line and its many processses.
+Before we delve into the specifics of learning programming languages and algorithms, it helps to know how the computers you work with everyday work, why they operate a certain way, and how you can manipulate those operations to do what you want. After a brief overview of Linux as a whole, we'll get into an introduction into the command line and its many processes.
 
 
 ## The History of Linux

@@ -7,7 +7,7 @@ Let's now create an example Kivy Project on your Linux Workstation! It'll employ
 
 First: go through [this page] to take a look at how to use Kivy on the Raspberry Pis. You'll likely know some of the information describing Kivy itself, so think of it as a brief refresher. 
 
-Now, quickly skim [this example project]. You'll be using this project in order to build your first Kivy UI independently! Let's first check to see whether you have a copy of this repository on your local system -- ideally, it should be in the path "/home/yourusername/packages/RaspberryPiCommon." If it is not, install the repository at this link: https://github.com/dpengineering/RaspberryPiCommon. 
+Now, quickly skim [this example project]. You'll be using this project in order to build your first Kivy UI independently! Let's first check to see whether you have a copy of this repository on your local system -- ideally, it should be in the path `/home/yourusername/packages/RaspberryPiCommon.` If it is not, install the repository at this link: https://github.com/dpengineering/RaspberryPiCommon. 
 
 We now need to open the project in PyCharm. Open Pycharm and select open, navigate to RaspberryPiCommon --> PiKivyProjects, click on NewProject, and press OK. 
 
@@ -92,9 +92,25 @@ If you're looking for more detailed specifications into threading, including cod
 ## The final challenge
 Alright, your last task is more so related to the clock, but I thought threading was a nice interlude here :)
 
-7. Show a component label that shows the (x, y) coordinates of a joystick and moves around with it.
+### Joysticks 
+Let's try and get joystick input to be read on your computer to eventually be served to the Kivy UI. 
 
-Hint -- updating your label needs to be done as quickly as possible: how do we do that?
+1. Begin by hooking up a USB joystick to your workstation. Ask a DPEA instructor if you don't have one on hand. 
+2. Next, install pygame. Specifically, we'll need version 1.9.6, so do so using `pip3 install pygame==1.9.6`. If you're having errors, try the command `sudo apt-get install python3.8-dev python3-dev python-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsdl1.2-dev libsmpeg-dev python3-numpy python-numpy subversion libportmidi-dev libfreetype6-dev`
+3. Now, go into a different python file. At the top, import the joystick module using `from pidev.Joystick import Joystick`. Create a new joystick object through this command: `joy = Joystick(0, False)`
+4. Get the x and y position of said joystick through the `get_axis` method -- e.g. `print(joy.get_axis('x'), joy.get_axis('y'))`
+
+### Interfacing with the UI 
+Let's now try and sync this joystick data with a Kivy UI! Your goal is to create a label that both displays the x and y position of the joystick, as well as dynamically updating its position based on the value of said joystick. This is what that'll look like: 
+
+Some advice:
+- Start small! Begin by creating a button that outputs the x and y of the joystick after being pressed. 
+- Build that up -- how do we automate that button press? 
+
+## Animations (also optional)
+Animations used to be a required portion of the DPEA's instructional documents, but I can't recall a single project that actually uses one! They do look pretty dope though, so if you're interested there's an additional challenge available for you here. 
+
+- Make an animated image button that sends you to a new screen. On another screen, add another animated image button that returns you back to main. I'd suggest a simple Sequential expanding and contracting animation, but do whatever animation your heart calls to. Here's [the documentation for creating Kivy animations]. 
 
 [this page]: https://github.com/dpengineering/RaspberryPiCommon/tree/master/PiKivyProjects
 
@@ -107,3 +123,5 @@ Hint -- updating your label needs to be done as quickly as possible: how do we d
 [https://github.com/dpengineering/RaspberryPiCommon/blob/master/pidev/kivy/ImageButton.py]: https://github.com/dpengineering/RaspberryPiCommon/blob/master/pidev/kivy/ImageButton.py 
 
 [the documentation]: https://docs.python.org/3/library/threading.html
+
+[the documentation for creating Kivy animations]: https://kivy.org/doc/stable/api-kivy.animation.html

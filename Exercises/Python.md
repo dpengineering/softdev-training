@@ -3,9 +3,9 @@ title: Python
 layout: default
 ---
 # Python
-Python is a powerful, multi-purpose programming language designed to write simple and readable code. Python is what we'll be running to power the majority of our projects, as it's the easiest way to quickly write very practical code for both UIs and controlling projects themselves. Python is both one of the most accessible and most common programming langauges out there, which means that it's widely used in industry and academia both in computer science and out of it. 
+Python is a powerful, multi-purpose programming language designed to write simple and readable code. Python is what we'll be running to power the majority of our projects, as it's the easiest way to quickly write very practical code for both UIs and controlling projects themselves. Python is both one of the most accessible and most common programming languages out there, which means that it's widely used in industry and academia both in computer science and out of it. 
 
-The best way to learn Python is to write it! There's many ways to do so, of which two suggestions are offered below. You can do one, both, or suggest an alternative to Mr. Harlow to learn in your own way. Learning is an induviudal process, so choose what you feel suits you the best. Don't worry if you don't have any programming experience, as these will start from the basics and work their way up to more advanced topics.
+The best way to learn Python is to write it! There's many ways to do so, of which two suggestions are offered below. You can do one, both, or suggest an alternative to Mr. Harlow to learn in your own way. Learning is an individual process, so choose what you feel suits you the best. Don't worry if you don't have any programming experience, as these will start from the basics and work their way up to more advanced topics.
 
 The first suggestion is to watch and follow along [the following 4.5 hour video]. Watch, pause, and follow along on your own screen to be able to gain intuition for writing code!
 
