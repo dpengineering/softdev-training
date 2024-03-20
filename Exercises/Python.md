@@ -1,6 +1,7 @@
 ---
 title: Python
 layout: default
+nav_order: 3
 ---
 # Python
 Python is a powerful, multi-purpose programming language designed to write simple and readable code. Python is what we'll be running to power the majority of our projects, as it's the easiest way to quickly write very practical code for both UIs and controlling projects themselves. Python is both one of the most accessible and most common programming languages out there, which means that it's widely used in industry and academia both in computer science and out of it. 

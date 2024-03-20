@@ -1,6 +1,7 @@
 ---
 title: Odrives
 layout: default
+nav_order: 11
 ---
 This is the last sheet before you may proceed onto your senior year project! And perhaps it's apt that it is the most frustrating of the sheets, even if it may seem short and sweet. 
 

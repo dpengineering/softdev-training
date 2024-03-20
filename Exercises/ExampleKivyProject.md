@@ -1,6 +1,7 @@
 ---
 title: Example Project
 layout: default
+nav_order: 5
 ---
 # Kivy Example Project
 Let's now create an example Kivy Project on your Linux Workstation! It'll employ many of the techniques that you used in the Kivy page, as well as some new tips and tricks to make your UIs both more functional and decorative.  

@@ -1,6 +1,7 @@
 ---
 title: Linux, Command Line
 layout: default
+nav_order: 1
 ---
 ## Preface
 Hello! This guide is meant to serve seniors in the DPEA in the software division. As you go through them, keep in mind that they were all made by fellow DPEA students, so there will most certainly be errors. If you catch one, submit a pull request to the softdev-training repository on Github (one of these pages will teach you how to do so!) to improve documentation for all.
