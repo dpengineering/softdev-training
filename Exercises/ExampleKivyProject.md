@@ -21,8 +21,7 @@ There's a fun functional secret on the page! Try clicking the very bottom of the
 It's time to try and take a crack at it! Try and use this example UI to complete a series of objectives.
 
 1. Create a button that toggles text between turning a button on and off. 
-
-2. Create another button that displays the number of times you've pressed it. 
+wer pressed it. 
 
 3. Create a slider labeled "position" that, when activated, changes the text on a separate label or position from  to 100. 
     - For reference, here is the [Slider documentation].
@@ -78,11 +77,13 @@ I'm not going to go over concrete code examples because this, once again, is onl
 
 Let's go over an example. Say you want to run your motors or even sleep while updating the GUI. We run into an issue, which is likely what you saw with the waiting function from above: a blocking process stalls out the rest of the functions in your sequential queue. 
 
-![img](/assets/Images/queue1.png)
+![img](../assets/Images/queue1.png)
 
 What threading allows you do to is, from an abstracted perspective, create an entirely new queue: this is run tangentially, but shares data with the other queue. 
 
-![img](/assets/Images/queue2.png)
+![img](../assets/Images/queue2.png)
+
+Tests^ 
 
 This way, you can run your motor function in a separate queue from your updateGUI() and other operating functions, which won't stall them out. How awesome!
 
