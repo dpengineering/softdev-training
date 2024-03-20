@@ -1,8 +1,9 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: DPEA Softdev Training Docs
+description: The DPEA's introductory training for software development students 
 theme: just-the-docs
 
 url: https://dpengineering.github.io/softdev-training/
+enable_copy_code_button: true
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
@@ -16,3 +17,8 @@ callouts:
   warning:
     title: Warning!
     color: red
+logo: "/engineeringGear.ico"
+
+
+
+
