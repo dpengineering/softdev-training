@@ -21,7 +21,10 @@ Note that these guides do contain slightly different pieces of information. This
 
 ## Imports
 
-Create a file named main.py. The easiest way to do so is to right click your project folder name -> new -> define a new python file.
+Create a file named main.py. The easiest way to do so is to right click your project folder name -> new -> define a new python file. This is shown below:
+
+![creating new file](/assets/Animation/creatingNewFile.webm)
+
 
 Let's begin by importing some utilities.
 

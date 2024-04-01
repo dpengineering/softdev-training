@@ -23,6 +23,9 @@ CheckIO: https://py.checkio.org/
 
 Go through as much as you need to feel comfortable with the language.
 
+For your reference, I've also created a short review video on inheritance. If you already know this concept, there's no need to go over it, but if not you'll need to step through the below video. 
+
+VIDEO HERE
 
 [the following 4.5 hour video]: https://www.youtube.com/watch?v=rfscVS0vtbw
 [linked here]: https://www.learnpython.org

@@ -12,16 +12,27 @@ Before we delve into the specifics of learning programming languages and algorit
 
 
 ## The History of Linux
-As you might know, Linux is an operating system, or the glue behind all of the chips and circuitry inside of your computer. Currently, the DPEA workstations (what you're likely reading this on) are running off of Ubuntu, which is a user friendly flavor of Linux. There are many different types of Linux flavors, from Kali Linux to Debian to Fedora, all of which are unified under the fundamental Linux kernel. It was rooted in the UNIX operating system, developed by Ken Thompson and Dennis Ritchie of Bell Laboratories in 1969, and continued by Linus Torwald in the modern era.
+As you might know, Linux is an operating system, or the glue behind all of the chips and circuitry inside of your computer. Currently, the DPEA workstations (what you're likely reading this on) are running off of Ubuntu, which is a user friendly flavor of Linux. There are many different types of Linux flavors, from Kali Linux to Debian to Fedora, all of which are unified under the fundamental Linux kernel. It was rooted in the UNIX operating system, developed by Ken Thompson and Dennis Ritchie of Bell Laboratories in 1969, and continued by Linus Torwald in the modern era. The swaggy king himself is shown below:
+
+![Linus Torwald](/assets/Images/linus.jpeg)
 
 ## What does Linux do?
-The beauty of the Linux terminal is that it connects underlying hardware with software, running your device, peripherals, and more. It's reliant on _abstraction_: it clumps things up into fundamental building blocks -- command line utilities -- and builds upon those command line utilities to run code and manage resources. By directly accessing these command line utilities, we can do some really powerful stuff with the amount of control we have over the system. To do so, we need to explore the **command line**.
+The beauty of the Linux terminal is that it connects underlying hardware with software, running your device, peripherals, and more. It's reliant on _abstraction_: it clumps things up into fundamental building blocks -- command line utilities -- and builds upon those command line utilities to run code and manage resources. For instance, the layers of abstraction in a computer is shown below: 
+
+![An image of the layers of abstraction in a computer](/assets/Images/abstraction.jpg)
+
+
+By directly accessing these command line utilities, we can do some really powerful stuff with the amount of control we have over the system. To do so, we need to explore the **command line**.
 
 
 # The command line
 
 ## What is it? 
-The command line is a method of directly accessing system utilities through text. They allow us to quickly and easily manipulate system resources and activities, which makes them super useful when it comes to writing code. Let's go through some basic Linux commands together -- try and follow along in your own terminal, which you can open through that gray box with a >_ icon within it. We'll be using bash, which comes as a default on most Linux systems. 
+The command line is a method of directly accessing system utilities through text. They allow us to quickly and easily manipulate system resources and activities, which makes them super useful when it comes to writing code. Let's go through some basic Linux commands together -- try and follow along in your own terminal, which you can open through that gray box with a >_ icon within it. This is shown below: 
+
+![terminal icon](/assets/Images/terminal.png)
+
+We'll be using bash, which comes as a default on most Linux systems. 
 
 if this is your first time with a terminal, I'd _highly_ reccomend you follow along and play with some of the commands as well! It's tough to learn things by just reading through documentation, but being able to see your computer interact with commands and troubleshooting those interactions is a great way to learn all of this content.
 {: .note }
@@ -31,7 +42,10 @@ The most fundamental command in the Linux terminal -- whatever you pass in, it s
 ```bash
 echo hello world
 ```
-Congrats! You wrote your first bit of command line code! 
+Congrats! You wrote your first bit of command line code! Your screen should look something like the image shown below. 
+
+![term](/assets/Images/term.png)
+
 
 ## pwd
 Alright, let's start exploring your computer through the command line! Your computer is centered around directories, also known as folders, in a hierarchal tree. For instance, this is a rough example of what a directory looks like:
@@ -157,7 +171,7 @@ The text editor for all of the cool kids. It allows you to edit files within the
 Allows you to run commands as a superuser, or as someone with all available permissions. For instance, `sudo ls` will run ls as a superuser. Can save you if things break, though installs with sudo can also break things further. It'll prompt you for a user password where no text will appear when you type -- don't be alarmed! If you type in your password and hit enter it'll work as intended.  
 
 ### Conclusion
-Congrats on finishing the first page of the DPEA softdev training! Hopefully it was somewhat of an enjoyable experience, and you gained familiarity with using the terminal. Though this may seem tedious, the terminal is exceptionally useful in almost all STEM fields, as many are incoorparating computing within them, so it definitely is a good thing to learn about regardless of your future profession. It also makes troubleshooting things at the DPEA a lot easier :)
+Congrats on finishing the first page of the DPEA softdev training! Hopefully it was somewhat of an enjoyable experience, and you gained familiarity with using the terminal. Though this may seem tedious, the terminal is exceptionally useful in almost all STEM fields, as many are incorporating computing within them, so it definitely is a good thing to learn about regardless of your future profession. It also makes troubleshooting things at the DPEA a lot easier :)
 
 
 
