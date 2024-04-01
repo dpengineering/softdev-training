@@ -29,6 +29,7 @@ All of this info can be found in the DPEA_DPi examples, linked here: https://git
 
 As you're working through these examples, PLEASE ENTER THESE COMMANDS IN AN INTERACTIVE SHELL ALONG WITH ME. If you just read these documents, it's hard to internalize anything that's going on (and also come on! Seeing things move is pretty sick)
 
+kfjasd;fajsd;flasjdfasdlfasdj;fsd;aflj test for the cronjob!
 
 Begin by defining your boilerplate. 
 
@@ -104,8 +105,115 @@ dpiStepper.moveToRelativePositionInSteps(stepper_num, steps, wait_to_finish_movi
 ```
 Awesome! For reference, we're about half way there, so feel free to take a break if you so desire. 
 
+For reference, the following commands will rotate stepper 0 counter clockwise, and stepper 1 counter-clockwise. The number of rotations is given by the value of the int. 
+```py
+    steps_per_rotation = 1600
+    wait_to_finish_moving_flg = False
+    dpiStepper.moveToRelativePositionInSteps(0,  1 * steps_per_rotation, wait_to_finish_moving_flg)
+    dpiStepper.moveToRelativePositionInSteps(1, -2 * steps_per_rotation, wait_to_finish_moving_flg)
+```
 
+Note that all of these movements are given relatively: moveToRelativePosition will move you one rotation in either direction regardless of its current, absolute position. And while this is nice, absolute positioning saves you the hassle of having to consistently track your current position and traverse to it using relative steps. Shown below is an example of how to use relative positioning: 
 
+```py
+# Set stepper 0 to coordinate 0. 
+stepper_num = 0
+dpiStepper.setCurrentPositionInSteps(stepper_num, 0)
+
+# Move one rotation to coordinate 1600, then another rotation to 3200, finally back 2 turns to coord 0
+wait_to_finish_moving_flg = True
+    dpiStepper.moveToAbsolutePositionInSteps(stepper_num, 1600, wait_to_finish_moving_flg)
+    dpiStepper.moveToAbsolutePositionInSteps(stepper_num, 3200, wait_to_finish_moving_flg)
+    dpiStepper.moveToAbsolutePositionInSteps(stepper_num, 0, wait_to_finish_moving_flg)
+
+# Just for funsies, let's ask where the stepper is. 
+    currentPosition = dpiStepper.getCurrentPositionInSteps(0)[1]
+    print(f"Pos = {currentPosition}")
+
+```
+## Units
+You also can change the units by which the system operates in, which abstracts away the icky calculations associated with constantly having to plug in a steps --> mm conversion into a calculator. 
+
+There are three main classes of units: steps (which we've seen), revolutions (typically for rotational systems), and millimeters (for linear systems, which you may experience later) 
+
+### Linear 
+Let's assume we're programming a linear system. We first have to set a steps per mil. calculation: 
+
+```py
+   stepper_num = 0
+   dpiStepper.setStepsPerMillimeter(stepper_num, 64)
+```
+Now, set motor speed and acceleration. 
+```py
+    speed_in_mm_per_sec = 100
+    accel_in_mm_per_sec_per_sec = 100
+    dpiStepper.setSpeedInMillimetersPerSecond(stepper_num, speed_in_mm_per_sec)
+    dpiStepper.setAccelerationInMillimetersPerSecondPerSecond(stepper_num, accel_in_mm_per_sec_per_sec)
+```
+Pretty easy to convert unfamiliar steps to real values, right?
+
+To move, use the command: 
+```py
+dpiSTepper.moveToRelativePositionInMillimeters(stepper_num, -100, True)
+```
+### Rotational
+We go through a similar process here, just for rotations rather than millimeters. Assume we're driving a one to one system with rotations. 
+
+First, specify the number of steps required to revolve once. 
+
+```py
+stepper_num = 0
+gear_ratio = 1
+motorStepPerRevolution = 1600 * gear_ratio
+dpiStepper.setStepsPerRevolution(stepper_num, motorStepPerRevolution)
+```
+
+Set the speed and acceleration as well.
+
+```py
+    speed_in_revolutions_per_sec = 2.0
+    accel_in_revolutions_per_sec_per_sec = 2.0
+    dpiStepper.setSpeedInRevolutionsPerSecond(stepper_num, speed_in_revolutions_per_sec)
+    dpiStepper.setAccelerationInRevolutionsPerSecondPerSecond(stepper_num, accel_in_revolutions_per_sec_per_sec)
+```
+Reset your absolute position. 
+```py
+    dpiStepper.setCurrentPositionInRevolutions(stepper_num, 0.0)
+```
+Now, move the motor in quarter rotations. 
+```py
+    waitToFinishFlg = True
+    dpiStepper.moveToAbsolutePositionInRevolutions(stepper_num, 0.25, waitToFinishFlg)
+    sleep(1)
+    dpiStepper.moveToAbsolutePositionInRevolutions(stepper_num, 0.5, waitToFinishFlg)
+    sleep(1)
+    dpiStepper.moveToAbsolutePositionInRevolutions(stepper_num, 0.75, waitToFinishFlg)
+    sleep(1)
+    dpiStepper.moveToAbsolutePositionInRevolutions(stepper_num, 1.0, waitToFinishFlg)
+    sleep(1)
+```
+There are a few more functions of interest, but you'll have to check the source to learn more. They're also named pretty descriptively, so I'm presuming you should be able to figure it out. 
+
+- ping()
+- waitUntilMotorStops(stepperNum)
+- getMotionComplete(stepperNum)
+- getStepperStatus(stepperNum)
+- getCurrentPositionInSteps(stepperNum)
+- getCurrentVelocityInStepsPerSecond(stepperNum)
+- decelerateToAStop(stepperNum)
+- emergencyStop(stepperNum)
+- moveToHomeInSteps(stepperNum, directionTowardHome, speedInStepsPerSecond, maxDistanceToMoveInSteps)
+- getCurrentPositionInMillimeters(stepperNum)
+- getCurrentVelocityInMillimetersPerSecond(stepperNum)
+- moveToHomeInMillimeters(stepperNum, directionTowardHome, speedInMillimetersPerSecond, maxDistanceToMoveInMillimeters)
+- getCurrentPositionInRevolutions(stepperNum)
+- getCurrentVelocityInRevolutionsPerSecond(stepperNum)
+- moveToHomeInRevolutions(stepperNum, directionTowardHome, speedInRevolutionsPerSecond, maxDistanceToMoveInRevolutions)
+
+We're all done! Let's disable the motors. 
+```py
+dpiStepper.enableMotors(False)
+```
 
 {: .note }
 ## Kivy UI 

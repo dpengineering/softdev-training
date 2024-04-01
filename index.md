@@ -4,7 +4,7 @@ layout: home
 ---
 
 To finish out these documents, we need to: 
-- Rewrite the stepper and servo pages to integrate the DPi files directly into the website, not some external git repo [HALFWAY DONE]
+- Rewrite the stepper and servo pages to integrate the DPi files directly into the website, not some external git repo [DONE]
 - describe the process of pushing and pulling from Git in regards to the Perp motion and Arm projects -- this should be quick
 - Upload all pertinent assets and animations that have already been created
 - Create new assets to better visualize key concepts 
