@@ -14,12 +14,12 @@ Before we delve into the specifics of learning programming languages and algorit
 ## The History of Linux
 As you might know, Linux is an operating system, or the glue behind all of the chips and circuitry inside of your computer. Currently, the DPEA workstations (what you're likely reading this on) are running off of Ubuntu, which is a user friendly flavor of Linux. There are many different types of Linux flavors, from Kali Linux to Debian to Fedora, all of which are unified under the fundamental Linux kernel. It was rooted in the UNIX operating system, developed by Ken Thompson and Dennis Ritchie of Bell Laboratories in 1969, and continued by Linus Torwald in the modern era. The swaggy king himself is shown below:
 
-![Linus Torwald](/assets/Images/linus.jpeg)
+![Linus Torwald](../assets/Images/linus.jpeg)
 
 ## What does Linux do?
 The beauty of the Linux terminal is that it connects underlying hardware with software, running your device, peripherals, and more. It's reliant on _abstraction_: it clumps things up into fundamental building blocks -- command line utilities -- and builds upon those command line utilities to run code and manage resources. For instance, the layers of abstraction in a computer is shown below: 
 
-![An image of the layers of abstraction in a computer](/assets/Images/abstraction.jpg)
+![An image of the layers of abstraction in a computer](../assets/Images/abstraction.jpg)
 
 
 By directly accessing these command line utilities, we can do some really powerful stuff with the amount of control we have over the system. To do so, we need to explore the **command line**.
@@ -30,7 +30,7 @@ By directly accessing these command line utilities, we can do some really powerf
 ## What is it? 
 The command line is a method of directly accessing system utilities through text. They allow us to quickly and easily manipulate system resources and activities, which makes them super useful when it comes to writing code. Let's go through some basic Linux commands together -- try and follow along in your own terminal, which you can open through that gray box with a >_ icon within it. This is shown below: 
 
-![terminal icon](/assets/Images/terminal.png)
+![terminal icon](../assets/Images/terminal.png)
 
 We'll be using bash, which comes as a default on most Linux systems. 
 
@@ -44,7 +44,7 @@ echo hello world
 ```
 Congrats! You wrote your first bit of command line code! Your screen should look something like the image shown below. 
 
-![term](/assets/Images/term.png)
+![term](../assets/Images/term.png)
 
 
 ## pwd
