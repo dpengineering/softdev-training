@@ -9,7 +9,7 @@ RPis, or Raspberry Pis, are the backbone of almost all of the projects here at t
 ## Your starting place
 This is where it all begins! You have a DPi Computer+ board attached to a Raspberry Pi with a power supply, plug, and a 24V to 12V step-down transformer. Attached below is a photo of this setup.
 
-![alt text](../assets/Images/dpi.jpg)
+![alt text](~/assets/Images/dpi.jpg)
 
 The DPi computer board provides a lot of benefits when it comes to working with the Pi beyond an interface for ports. One of these benefits is the auto-shutoff feature: when you turn off the RPi, it'll do a safe shutoff for it, allowing it to remain on while it goes through its sleep process. If this was not present, it'd basically just kill itself while sleeping if you instantaneously cut power to it. However, it does have its limitations -- be sure only to supply power back to the Pi after shutoff after it's gone through its entire shutoff process (e.g. the indicator lights on the Pi turns off)
 
