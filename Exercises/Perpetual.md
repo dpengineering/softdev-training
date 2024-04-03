@@ -4,6 +4,7 @@ layout: default
 nav_order: 9
 ---
 # Perpetual Motion Machine
+![alt text](../assets/Images/perp.jpg)
 ## Introduction
 How time flies! With the skills you've developed by going through these sheets, you're ready to tackle your first project! You'll be programming the Perpetual Motion machine, which, as the name suggests, moves a ball up and down a ramp till the end of time. Or, well, until you unplug it. 
 

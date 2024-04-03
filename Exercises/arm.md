@@ -4,6 +4,7 @@ layout: default
 nav_order: 10
 ---
 # Arm
+![alt text](../assets/Images/arm.jpg)
 ## Structure
 Alright, same deal, but with the robotic arm. Same with the motion machine, you'll likely need to collaborate with a partner to get this done due to limited resources. This time, I believe there are the following necessary functions: 
 - Arm up / down 

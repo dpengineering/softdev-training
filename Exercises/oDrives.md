@@ -3,6 +3,11 @@ title: Odrives
 layout: default
 nav_order: 11
 ---
+# ODrive
+![alt text](../assets/Images/odrive.jpg)
+
+| Don't @ me for the lighting Joey |
+
 This is the last sheet before you may proceed onto your senior year project! And perhaps it's apt that it is the most frustrating of the sheets, even if it may seem short and sweet. 
 
 I'll preface this by saying that the ODrives are a notoriously finnicky set of motor controllers. They're really cool! And really powerful! But also frequently error out and spark issues, oftentimes seemingly for no reason. Take solace in the fact that you are not alone in your problems! 
