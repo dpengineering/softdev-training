@@ -5,9 +5,9 @@ nav_order: 11
 ---
 This is the last sheet before you may proceed onto your senior year project! And perhaps it's apt that it is the most frustrating of the sheets, even if it may seem short and sweet. 
 
-I'll preface this by saying that the ODrives are a notoriously finnicky set of motor controllers. They're really cool! And really powerful! But also frequently error out and spark issues, oftentimes seemingly for no reason. Take solace in the fact that you are not alone in your problems! For reference, I've actually burnt up an ODrive, so whatever you do is better than whatever I have done. 
+I'll preface this by saying that the ODrives are a notoriously finnicky set of motor controllers. They're really cool! And really powerful! But also frequently error out and spark issues, oftentimes seemingly for no reason. Take solace in the fact that you are not alone in your problems! 
 
-Luckily, you don't have to learn from me! Mr. PZ has created a great, independent website here:  https://dpengineering.github.io/dpea-odrive/ so go through the examples and challenges found for a great introduction to the ODrive ecosystem. 
+Mr. PZ has created a great, independent website here:  https://dpengineering.github.io/dpea-odrive/ so go through the examples and challenges found for a great introduction to the ODrive ecosystem. 
 
 Note that you should be as careful as possible with these boards. They're about 70 dollars a piece, and awfully fragile, so triple check your connections before turning anything on!
 

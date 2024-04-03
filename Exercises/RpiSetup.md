@@ -21,7 +21,7 @@ A 12V source is indicated by a red and black connector. This is shown below:
 
 ![alt text](../assets/Images/12V.jpg)
 
-It should be fairly intuitive where different plugs connect to each other. Connect 24V sources to 24V connectors, and 12V sources to 12V connectors. You also should have an external display -- hook that up through HDMI to the Pi. You'll also need an Ethernet cable -- attach that to the port on the RPi to your workstation.
+It should be fairly intuitive where different plugs connect to each other. Connect 24V sources to 24V connectors, and 12V sources to 12V connectors. You also should have an external display -- hook that up through HDMI to the Pi. You'll also need an Ethernet cable, which will attach to the port on the RPi to your workstation.
 
 Let's now go through the process of connecting your RPi to your Ubuntu machine. This seems pretty simple at first glance, but it's a shockingly annoying process to go through! As such, I strongly advise watching the setup video shown below before you go any further. 
 

@@ -70,6 +70,12 @@ However, this comes to a head when we run blocking operations. Plenty of things 
 
 Try it for yourself! Create a new DPEA button which runs a function "waiting" when pressed. Import the time library, and have this button sleep for ten seconds using time.sleep, then print out some text. In those ten seconds, you'll see that your other button, the king kermit one, cannot update: the sleep in the waiting function is stalling out the other function that's supposed to update the GUI.
 
+Note that this works because Kivy is operating in what is essentially a massive "while(True)" loop called the event loop. This is shown below: 
+
+![alt text](../assets/Images/mainloop.png)
+
+As mentioned earlier, *Event Dispatchers* allow you to inject some code and inputs into the main loop and achieve the same effect as a sleep, just without stalling the thread. In a majority of scenarios, you should absolutely be using an Event Dispatcher, as they are the built-in solution from Kivy themselves and should be treated as such.
+
 ## Threading -- optional!
 
 There are times, however, in which it's much, much easier to run a blocking operation -- for instance, when running a motor. There, it's helpful to thread things. 
