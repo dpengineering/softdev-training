@@ -13,8 +13,7 @@ Note that we only have about 4 Perpetual motion machines (and obviously, more th
 - If the perpetual motion machine hardware is not available, let the DPEA software instructor know -- they may be able to get you working on the next project, the Robotic Arm, and then come back and finish up the project later on. 
 
 ## Git collaboration
-info on git here 
-
+Remember 
 This project is pretty daunting, so there's a template that's been provided for you for the Kivy UI. This has hopefully already been cloned
 from https://github.com/dpengineering/Project-Examples.
 
