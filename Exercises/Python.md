@@ -10,6 +10,8 @@ The best way to learn Python is to write it! There's many ways to do so, of whic
 
 The first suggestion is to watch and follow along [the following 4.5 hour video]. Watch, pause, and follow along on your own screen to be able to gain intuition for writing code!
 
+If you're looking for an alternative, these videos by Prof. Farid also work great -- https://farid.berkeley.edu/learnPython/ -- though are likely going to be a little bit more rigorous/time-consuming. 
+
 Note -- the first thing he'll tell you to do is to install Pycharm/python3. These are already installed on your computer, so don't worry about that. 
 
 
