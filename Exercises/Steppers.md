@@ -167,7 +167,7 @@ gear_ratio = 1
 motorStepPerRevolution = 1600 * gear_ratio
 dpiStepper.setStepsPerRevolution(stepper_num, motorStepPerRevolution)
 ```
- hey bestie
+hey bestie! 
 Set the speed and acceleration as well.
 
 ```py
