@@ -19,6 +19,13 @@ callouts:
 logo: "assets/Images/engineeringGear.png"
 favicon_ico: "/engineeringGear.ico"
 
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+
 
 
 
