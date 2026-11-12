@@ -1,0 +1,15 @@
+# Runs once at boot, after the network is up and before the exhibit starts.
+# Pulls the latest main into the exhibit checkout, keeping the current commit if that fails.
+[Unit]
+Description=Update @REPO_NAME@ from main
+Wants=network-online.target
+After=network-online.target
+Before=@SERVICE@.service
+
+[Service]
+Type=oneshot
+User=@USER@
+ExecStart=@EXHIBIT_DIR@/deploy/update.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,21 @@
+# Runs at boot once the update service finishes. Restarts only after a clean exit (admin Restart), so a crash leaves it off.
+# Starts main.py on the desktop's display (DISPLAY=:0) from the exhibit checkout's venv.
+[Unit]
+Description=@REPO_NAME@ exhibit
+Wants=@SERVICE@-update.service
+After=@SERVICE@-update.service
+
+[Service]
+User=@USER@
+WorkingDirectory=@EXHIBIT_DIR@
+Environment=DISPLAY=:0
+# Kivy logs to the console, which systemd sends to the journal, so skip its ~/.kivy/logs files.
+Environment=KIVY_NO_FILELOG=1
+# Fill whatever screen is attached at its native resolution.
+Environment=KCFG_GRAPHICS_FULLSCREEN=auto
+ExecStart=@EXHIBIT_DIR@/.venv/bin/python -u main.py
+Restart=on-success
+RestartSec=3
+
+[Install]
+WantedBy=graphical.target
