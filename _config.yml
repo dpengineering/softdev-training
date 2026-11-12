@@ -25,6 +25,12 @@ defaults:
       type: pages
     values:
       layout: default
+  # The theme's JS and search index are pages too, and wrapping them in a layout breaks them.
+  - scope:
+      path: "assets"
+      type: pages
+    values:
+      layout: null
 
 
 
