@@ -127,15 +127,30 @@ Push to main, then reboot the Pi. On every boot, SERVICE-update fetches main and
 - If the new commit's dependencies fail to install, it goes back to the previous commit.
 - Files that git ignores, like a per-machine settings file, are never touched by updates.
 
-## What the app needs to do
+## When the app exits
 
-- **Restart:** exit cleanly (exit code 0). The service starts the app again after 3 seconds.
-- **Crash:** the service leaves the app off until the Pi is power-cycled, so a broken exhibit doesn't restart over and over.
-- **Quit for good:** stop the service from the app. Setup allows this one command without a password:
+What the service does next depends on how the app exited:
+
+| How the app exits | What happens |
+|:--|:--|
+| Normally (exit code 0), like pressing Escape on a keyboard | The service starts the app again after 3 seconds. |
+| With an error, like an uncaught exception | The app stays off until the Pi is power-cycled, so a broken exhibit doesn't restart over and over. |
+| The service is stopped | The app stays off until the Pi is power-cycled. |
+
+### Admin Restart and Quit buttons
+
+If the app has an admin screen, its Restart and Quit buttons use this behavior:
+
+- **Restart** resets a misbehaving session. Make the hardware safe (stop motion, disable motors), then exit the app normally, for example with App.get_running_app().stop() in Kivy. The service brings it back.
+- **Quit** turns the exhibit off until it's power-cycled. Exiting isn't enough, since the service would just restart it. Make the hardware safe, then stop the service. setup.sh lets the app run this one command without a password:
 
 ```python
+import subprocess
+
 subprocess.run(["sudo", "systemctl", "stop", "SERVICE.service"], check=True)
 ```
+
+Replace SERVICE with the service name, like newtons-cradle.service.
 
 ## Working on the Pi
 
