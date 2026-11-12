@@ -74,7 +74,6 @@ GEM
     webrick (1.8.1)
 
 PLATFORMS
-  arm64-darwin-23
   arm64-darwin-25
   x86_64-linux
 
@@ -83,4 +82,4 @@ DEPENDENCIES
   just-the-docs (= 0.7.0)
 
 BUNDLED WITH
-   2.3.26
+  4.0.24
