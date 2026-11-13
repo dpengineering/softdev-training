@@ -1,6 +1,6 @@
 ---
 title: Deploying to a Raspberry Pi
-nav_order: 12
+nav_order: 13
 ---
 
 # Deploying to a Raspberry Pi
