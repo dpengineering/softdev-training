@@ -1,6 +1,6 @@
 ---
 title: Run the App at Startup
-nav_order: 13
+nav_order: 14
 ---
 
 # Run the App at Startup
@@ -18,7 +18,7 @@ Throughout this page, REPO_NAME is the repo's exact name on GitHub and SERVICE i
 
 ## Before you start
 
-- The Pi is flashed with the DPEA Raspberry Pi image and is connected to the internet.
+- The Pi is [flashed with the DPEA Raspberry Pi image](flash_sd_card.html) and is connected to the internet.
 - The Pi has a [deploy key](deploying_to_rpi.html) for this repo.
 - The repo is in the dpengineering org, uses uv (it has pyproject.toml and uv.lock), and the app starts from main.py at the repo root.
 
