@@ -23,7 +23,7 @@ A .md file without front matter isn't turned into a page.
 | Front matter | What it does |
 |:--|:--|
 | nav_order: 3 | Sets the position among its siblings. Pages without one go after numbered pages, sorted by title. |
-| parent: Deploying to a Raspberry Pi | Nests the page under another page. Use that page's exact title. |
+| parent: Flash the SD Card | Nests the page under another page. Use that page's exact title. |
 | has_children: true | Put this on the parent page. It also lists the child pages at the bottom. |
 | nav_exclude: true | Hides the page from the sidebar. |
 
@@ -32,7 +32,7 @@ Example child page:
 ```yaml
 ---
 title: Connect to Wi-Fi
-parent: Deploying to a Raspberry Pi
+parent: Flash the SD Card
 nav_order: 1
 ---
 ```

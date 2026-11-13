@@ -5,7 +5,7 @@ nav_order: 14
 
 # Run the App at Startup
 
-<!-- Video: add once recorded -->
+<iframe width="720" height="405" src="https://www.youtube.com/embed/TKoac1ikUL0" frameborder="0" allowfullscreen></iframe>
 
 This sets up two systemd services so an exhibit runs on its own when the Pi turns on:
 

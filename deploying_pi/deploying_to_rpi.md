@@ -1,9 +1,9 @@
 ---
-title: Deploying to a Raspberry Pi
+title: Add a Deploy Key
 nav_order: 13
 ---
 
-# Deploying to a Raspberry Pi
+# Add a Deploy Key
 
 <iframe width="720" height="405" src="https://www.youtube.com/embed/cZVLRzszu0c" frameborder="0" allowfullscreen></iframe>
 
